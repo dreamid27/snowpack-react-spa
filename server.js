@@ -5,6 +5,7 @@ const path = require("path");
 
 const app = new Koa();
 const pathStatic = path.join(__dirname, "build");
+const PORT = 3001;
 
 app.use(serve(pathStatic));
 
@@ -13,4 +14,6 @@ app.use(async (ctx) => {
   ctx.body = fs.createReadStream("./build/index.html");
 });
 
-app.listen(3000);
+app.listen(PORT);
+
+console.log(`listening server on port: ${PORT}, http://localhost:3001`);
