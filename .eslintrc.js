@@ -16,12 +16,15 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "react/jsx-one-expression-per-line": "off",
+  },
   settings: {
     "import/resolver": {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
+      alias: [["@utils", "./src/utils"]],
     },
   },
 };
